@@ -1,0 +1,33 @@
+<script>
+    document.getElementById("sessionUserName").innerHTML = localStorage.getItem("usr_name") + " - " + localStorage.getItem("ucat_name");
+</script> 
+
+
+
+<!-- sidebar: style can be found in sidebar.less -->
+<section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+        <div class="pull-left image">
+            <img src="../../resource/images/administrator.png" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+            <p id = "sessionUserName"></p>
+
+            <a href="#"><i class="fa fa-circle text-success"></i> Online </a>
+        </div>
+    </div>
+
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu">
+        <li class="header">MAIN NAVIGATION</li>
+		<li ><a href="../../pages/malu/home.html"><i class="fa fa-circle-o"></i> Dashboard</a></li>
+        <li ><a href="../../pages/malu/add_boundary.html"><i class="fa fa-circle-o"></i> add_boundary</a></li>
+        <li ><a href="../../pages/malu/view_boundary.html"><i class="fa fa-circle-o"></i> view_boundary</a></li>
+		<li ><a href="../../pages/malu/create_rule.html"><i class="fa fa-circle-o"></i> create_rule</a></li>
+		<li ><a href="../../pages/malu/execute_rule.html"><i class="fa fa-circle-o"></i> execute_rule</a></li>
+        <li ><a href="../../pages/malu/alert_priority.html"><i class="fa fa-circle-o"></i> Alert Priority</a></li>
+        <li ><a href="../../pages/malu/view_all_suspected_vesssel.html"><i class="fa fa-circle-o"></i> View All Suspected Vesssel</a></li>
+    </ul>
+</section>
+<!-- /.sidebar -->

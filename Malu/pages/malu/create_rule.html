@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VMS </title>
+
+    <link rel="shortcut icon" href="../../resource/images/flag.png">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">-->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../resource/css/font-awesome-4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../../resource/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+    <!-- SVD Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+    <!-- SVD main css -->
+    <link rel="stylesheet" href="../../resource/css/svd-mis-main.css">
+
+    <!-- jQuery 2.2.0 -->
+    <script src="../../plugins/jQuery/jQuery-2.2.0.min.js"></script>
+
+    <!-- Sweet Alerts -->
+    <script src="../../resource/js/lib/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../resource/js/lib/sweetalert.css">
+
+
+    <!--JQuery Query Builder -->
+    <script src="../../bower_components/jquery-extendext/jQuery.extendext.js"></script>
+    <script src="../../bower_components/doT/doT.js"></script>
+    <script src="../../bower_components/doT/doT.js"></script>
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="../../resource/js/lib/sql-parser-master/browser/sql-parser.js"></script>
+    <script src="../../resource/js/lib/QBPlugins/interactjs.js"></script>
+    <script src="../../resource/js/lib/QBPlugins/selectjs/js/bootstrap-select.js"></script>
+    <script src="../../resource/js/lib/QBPlugins/moment.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="../../bower_components/jQuery-QueryBuilder/dist/css/query-builder.default.min.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../../resource/js/lib/QBPlugins/selectjs/css/bootstrap-select.css">
+
+
+
+
+
+
+
+
+    <script>
+        $(function () {
+
+            var userType = localStorage.getItem("menueName");
+
+            $("#leftMenueOfSVD").load(userType);
+            $("#mainFooterOfSVD").load("../common/footer.html");
+            $("#adminNotificationComponent").load("../common/AdminNotification.html");
+            $("#systemNotificationCompnent").load("../common/SystemNotification.html");
+            $("#userTaskComponent").load("../common/UserTaskNotification.html");
+            $("#userProfileMiniComponent").load("../common/UserProfileMini.html");
+        });
+    </script>
+
+    <!-- this page controlling JS -->
+    <script src="../../resource/js/malu/create_rule.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+
+<div class="wrapper">
+
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="../welcome/welcome.html" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>VMS</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>UCSC - VMS</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    <!-- Messages: style can be found in dropdown.less-->
+                    <li class="dropdown messages-menu" id="adminNotificationComponent">
+                        <!-- It is load from another file.-->
+                    </li>
+
+                    <!-- Notifications: style can be found in dropdown.less -->
+                    <li class="dropdown notifications-menu" id="systemNotificationCompnent">
+                        <!-- It is load from another file.-->
+                    </li>
+
+                    <!-- Tasks: style can be found in dropdown.less -->
+                    <li class="dropdown tasks-menu" id="userTaskComponent">
+                        <!-- It is load from another file.-->
+                    </li>
+
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu" id="userProfileMiniComponent">
+
+                    </li>
+
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar" id="leftMenueOfSVD"></aside>
+
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+        <div class="box box-warning">
+            <div class="box-header with-border" align="center">
+                <h3 class="box-title">Recommendation Filling Form</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <form role="form" id="registerRule">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label>Rule ID<span style="color:red">*</span></label>
+                        <input type="number"  class="form-control" placeholder="Enter the Year of Recommendation"  min="1" required id="rule_id">
+                    </div>
+                    <div class="form-group">
+                        <label>Rule Name <span style="color:red">*</span></label>
+                        <input type="text"  class="form-control" placeholder="Enter Rule Name" id="rule_name" name="stu_para1" required>
+                    </div>
+                    <div class="form-group" >
+                        <label>Rule Description</label>
+                        <textarea class="form-control" rows="3" placeholder="Enter the Description of the Recommendation" id="rule_des" name="stu_para5"></textarea>
+                    </div>
+                    <div class="form-group"  >
+                        <label>Rule Description</label>
+                        <select class="form-control"  id="view_name" >
+                            <option id="main_view" value="main_view">Main View</option>
+                            <option id="view2" value="view2">Second View</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h1>When</h1>
+                        <div id="builder-basic"></div>
+                        <button id="viewQuery" class="btn btn-success btn-rounded" onclick="viewQuery()">ViewQuery</button>
+                    </div>
+                    <div>
+                        <div id="genaratedQuery"></div>
+                    </div>
+                    <div class="form-group">
+                        <h1>Then</h1>
+                    </div>
+                    <div class="form-group">
+                        <label>Rule Priority<span style="color:red">*</span></label>
+                        <input type="number"  class="form-control" placeholder="Enter the Year of Recommendation" max="10" min="1" id="rule_pri">
+                    </div>
+                    <div class="form-group">
+                        <label>Rule Score<span style="color:red">*</span></label>
+                        <input type="number"  class="form-control" placeholder="Enter the Year of Recommendation" max="10" min="1" id="rule_score">
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" id="btn-get" class="btn btn-success btn-rounded">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+
+
+    <footer class="main-footer" id="mainFooterOfSVD"></footer>
+
+</div>
+<!-- ./wrapper -->
+
+
+<!-- Bootstrap 3.3.6
+<script src="../../bootstrap/js/bootstrap.min.js"></script>-->
+
+<!-- SVD App -->
+<script src="../../dist/js/app.min.js"></script>
+<!-- SVD for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+
+<script src="../../bower_components/jQuery-QueryBuilder/dist/js/query-builder.js"></script>
+
+
+</body>
+</html>
